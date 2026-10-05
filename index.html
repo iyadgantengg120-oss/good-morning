@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Good Morning, Sayang</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--sky-top:#ffd9c7;--sky-bot:#fff4e6;--ink:#4a2f3b;--soft:#8a6272;--card:#fffaf5;--sun:#ff9f6e;--rose:#e8688a}
+@media (prefers-color-scheme:dark){:root{--sky-top:#3a2540;--sky-bot:#1f1830;--ink:#ffe9e0;--soft:#d6b3c2;--card:#2c2140;--sun:#ffb27f;--rose:#ff86a6}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:linear-gradient(180deg,var(--sky-top),var(--sky-bot) 60%);color:var(--ink);font-family:Nunito,system-ui,sans-serif;line-height:1.6}
+main{max-width:640px;margin:0 auto;padding:28px 20px 56px}
+.hero{text-align:center;padding-top:12px}
+.sun{width:120px;height:120px;margin:0 auto 8px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ffe3a3,var(--sun));box-shadow:0 0 60px 20px color-mix(in srgb,var(--sun) 45%,transparent);transform:translateY(60px);opacity:0;animation:rise 2.2s ease-out .2s forwards}
+@keyframes rise{to{transform:translateY(0);opacity:1}}
+h1{font-family:Caveat,cursive;font-size:clamp(3rem,13vw,4.6rem);line-height:1;margin:18px 0 6px;color:var(--rose)}
+.sub{color:var(--soft);margin:0}
+.msg{background:var(--card);border-radius:22px;padding:24px 22px;margin:28px 0 0;text-align:center;box-shadow:0 8px 28px color-mix(in srgb,var(--rose) 18%,transparent)}
+.msg p{font-size:1.15rem;margin:0 0 16px;min-height:5.2em;display:flex;align-items:center;justify-content:center}
+button{font:inherit;font-weight:600;border:0;border-radius:999px;padding:11px 22px;background:var(--rose);color:#fff;cursor:pointer}
+.days{text-align:center;margin:30px 0 8px;color:var(--soft)}
+.days b{font-family:Caveat,cursive;font-size:2.6rem;color:var(--rose);font-weight:700}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:22px;margin-top:26px}
+.polaroid{margin:0;background:var(--card);padding:10px 10px 14px;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,.14)}
+.polaroid:nth-child(odd){transform:rotate(-2deg)}
+.polaroid:nth-child(even){transform:rotate(2deg)}
+.polaroid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
+figcaption{font-family:Caveat,cursive;font-size:1.5rem;text-align:center;margin-top:8px}
+footer{text-align:center;margin-top:44px;font-family:Caveat,cursive;font-size:1.7rem;color:var(--rose)}
+@media (prefers-reduced-motion:reduce){.sun{animation:none;transform:none;opacity:1}}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="sun"></div>
+    <h1>Good morning, sayang</h1>
+    <p class="sub" id="date"></p>
+  </section>
+
+  <section class="msg">
+    <p id="text"></p>
+    <button id="next" type="button">Pesan lainnya</button>
+  </section>
+
+  <p class="days">Sudah <b id="count">0</b> hari kita bersama</p>
+
+  <section class="gallery">
+    <figure class="polaroid"><img src="foto1.jpg" alt="" style="object-position:50% 35%"><figcaption>Tatapan favoritku</figcaption></figure>
+    <figure class="polaroid"><img src="foto2.jpg" alt="" style="object-position:50% 40%"><figcaption>Manis banget</figcaption></figure>
+    <figure class="polaroid"><img src="foto3.jpg" alt="" style="object-position:70% 35%"><figcaption>Senyum paling hangat</figcaption></figure>
+    <figure class="polaroid"><img src="foto4.jpg" alt="" style="object-position:50% 35%"><figcaption>Cantiknya kamu</figcaption></figure>
+    <figure class="polaroid"><img src="foto5.jpg" alt="" style="object-position:45% 30%"><figcaption>Pagi, sayang</figcaption></figure>
+    <figure class="polaroid"><img src="foto6.jpg" alt="" style="object-position:50% 35%"><figcaption>permpuan yang sangat aku sayangi</figcaption></figure>
+    <figure class="polaroid"><img src="foto7.jpg" alt="" style="object-position:50% 35%"><figcaption>lucuuu tauuu foto ini</figcaption></figure>
+    <figure class="polaroid"><img src="foto8.jpg" alt="" style="object-position:50% 35%"><figcaption>saynggggg aku binggu apa lagi captionya</figcaption></figure>
+    <figure class="polaroid"><img src="foto9.jpg" alt="" style="object-position:50% 35%"><figcaption>pap paling aku suka</figcaption></figure>
+    <figure class="polaroid"><img src="foto10.jpg" alt="" style="object-position:50% 35%"><figcaption>au ah bingung</figcaption></figure>
+  </section>
+
+  <footer>ilove you sayngggg</footer>
+</main>
+<script>
+var msgs=[
+ "Good morning sayang… semoga hari ini kamu dilancarkan dalam semua urusan ya 🤍",
+ "Good morning sayang… semoga Allah selalu menjaga dan melindungi kamu di mana pun kamu berada.",
+ "sayang… jangan lupa sarapan, semoga harimu penuh energi dan senyum ☀️.",
+ "aku doain semoga semua rencana dan impianmu satu per satu terwujud.",
+ "semoga di pagih hari ini membawa banyak kabar baik dan kebahagiaan buat kamu.",
+ "semoga kamu selalu sehat, tenang hatinya, tenang pikirannya dan dikelilingi orang-orang baik di sekitar kamu♥️.",
+ "terima kasih sudah jadi alasan aku semangat tiap pagi. Semoga kita terus diberi kebaikan bersama 🤍."
+];
+var i=Math.floor(Date.now()/86400000)%msgs.length;
+var textEl=document.getElementById("text");
+function show(){textEl.textContent=msgs[i]}
+document.getElementById("next").onclick=function(){i=(i+1)%msgs.length;show()};
+show();
+var now=new Date();
+document.getElementById("date").textContent=now.toLocaleDateString("id-ID",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+var start=new Date(2026,8,26),today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+document.getElementById("count").textContent=Math.max(0,Math.round((today-start)/86400000));
+</script>
+</body>
+</html>
